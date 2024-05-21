@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dihj100cnjl0k"]
+
+[ext_resource type="Texture2D" uid="uid://h7lglu8anicw" path="res://kenney_animal-pack-redux/PNG/Round/chick.png" id="1_pvrm5"]
+[ext_resource type="Script" path="res://scenes/food_items.gd" id="2_3hpvs"]
+
+[node name="FoodItems" type="Sprite2D"]
+texture = ExtResource("1_pvrm5")
+script = ExtResource("2_3hpvs")

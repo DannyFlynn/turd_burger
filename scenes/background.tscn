@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ylby60jwsqs"]
+
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_3ymqq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rofp3"]
+load_path = "res://.godot/imported/bg_kitchen.jpg-68eec2585983e5153837726b341ab783.ctex"
+
+[node name="Background" type="Sprite2D"]
+texture = SubResource("CompressedTexture2D_rofp3")
+centered = false
+script = ExtResource("1_3ymqq")

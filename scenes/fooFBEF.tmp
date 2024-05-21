@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dihj100cnjl0k"]
+
+[ext_resource type="Script" path="res://scripts/food_items.gd" id="2_bj30s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dowfm"]
+radius = 41.0
+
+[node name="FoodItems" type="Sprite2D"]
+centered = false
+script = ExtResource("2_bj30s")
+
+[node name="HitPlate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitPlate"]
+position = Vector2(66, 93)
+shape = SubResource("CircleShape2D_dowfm")
+
+[connection signal="body_entered" from="HitPlate" to="." method="_on_hit_plate_body_entered"]

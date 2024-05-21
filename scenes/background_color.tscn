@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b467e84dlu1wu"]
+
+[ext_resource type="Script" path="res://scripts/background_color.gd" id="1_e7da6"]
+
+[node name="BackgroundColor" type="ColorRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.827451, 0.596078, 0.956863, 1)
+script = ExtResource("1_e7da6")

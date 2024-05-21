@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfxwepx6ivi53"]
+
+[ext_resource type="Script" path="res://scripts/score_label.gd" id="1_h3u30"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tni18"]
+font_size = 32
+
+[node name="ScoreLabel" type="Label"]
+top_level = true
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_tni18")
+script = ExtResource("1_h3u30")

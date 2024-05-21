@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkuh771b331to"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_8qj7s"]
+[ext_resource type="PackedScene" uid="uid://djm0sn8txboll" path="res://scenes/player.tscn" id="1_jyiej"]
+[ext_resource type="PackedScene" uid="uid://dihj100cnjl0k" path="res://scenes/food_items.tscn" id="3_whyoq"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8qj7s")
+
+[node name="Player" parent="." instance=ExtResource("1_jyiej")]
+
+[node name="Left" type="Button" parent="."]
+offset_right = 100.0
+offset_bottom = 100.0
+text = "LEFT"
+
+[node name="Right" type="Button" parent="."]
+offset_right = 100.0
+offset_bottom = 100.0
+text = "RIGHT"
+
+[node name="FoodItems" parent="." instance=ExtResource("3_whyoq")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="pressed" from="Left" to="Player" method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="Player" method="_on_right_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

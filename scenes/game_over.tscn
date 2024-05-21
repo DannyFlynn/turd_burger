@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw65pvjn63ncp"]
+
+[ext_resource type="Script" path="res://scripts/gameover.gd" id="1_7pwh5"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_rr72a"]
+[ext_resource type="Texture2D" uid="uid://gxj0p44vodj4" path="res://assets/game_over.png" id="2_wmb16"]
+[ext_resource type="AudioStream" uid="uid://uvv4kxrpoxco" path="res://assets/gameover.wav" id="3_7x7bk"]
+[ext_resource type="Texture2D" uid="uid://cwro3yl268p2h" path="res://assets/retry_btn.png" id="4_1oxc4"]
+[ext_resource type="PackedScene" uid="uid://c6ylby60jwsqs" path="res://scenes/background.tscn" id="4_lnrjs"]
+[ext_resource type="Texture2D" uid="uid://cl1irglobpjcg" path="res://assets/menu_btn.png" id="6_07akb"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_rr72a")
+
+[node name="Background" parent="." instance=ExtResource("4_lnrjs")]
+
+[node name="GameOverLogo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -61.0
+offset_right = 125.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_wmb16")
+
+[node name="Reset" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -35.0
+offset_right = 80.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "
+"
+icon = ExtResource("4_1oxc4")
+flat = true
+script = ExtResource("1_7pwh5")
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -35.0
+offset_right = 80.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "
+"
+icon = ExtResource("6_07akb")
+flat = true
+script = ExtResource("1_7pwh5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7x7bk")
+autoplay = true
+
+[connection signal="button_down" from="Reset" to="." method="_on_reset_button_down"]
+[connection signal="button_down" from="Menu" to="." method="_on_menu_button_down"]

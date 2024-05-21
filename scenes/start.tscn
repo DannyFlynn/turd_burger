@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://do6f3wl0sog1l"]
+
+[ext_resource type="PackedScene" uid="uid://c6ylby60jwsqs" path="res://scenes/background.tscn" id="1_d3x86"]
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_te10q"]
+[ext_resource type="Texture2D" uid="uid://dk8ty787ieyh2" path="res://assets/turd_burger.png" id="2_exbex"]
+[ext_resource type="PackedScene" uid="uid://cq5iup5ixetmj" path="res://scenes/game_sounds.tscn" id="4_78hb2"]
+[ext_resource type="Texture2D" uid="uid://c1336rdoedsjp" path="res://assets/start_btn.png" id="4_p1jtr"]
+[ext_resource type="Texture2D" uid="uid://dy4132lhcet3f" path="res://assets/tutorial_btn.png" id="5_mrmbw"]
+[ext_resource type="AudioStream" uid="uid://cktxjuwsq0s7c" path="res://assets/intro_music.wav" id="5_xksxk"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_te10q")
+
+[node name="Background" parent="." instance=ExtResource("1_d3x86")]
+
+[node name="GameLogoStart" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -105.5
+offset_right = 125.0
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_exbex")
+
+[node name="StartGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "
+"
+icon = ExtResource("4_p1jtr")
+flat = true
+
+[node name="Tutorial" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "
+"
+icon = ExtResource("5_mrmbw")
+flat = true
+
+[node name="IntroMusic" parent="." instance=ExtResource("4_78hb2")]
+stream = ExtResource("5_xksxk")
+
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
